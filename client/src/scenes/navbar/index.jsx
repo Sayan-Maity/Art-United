@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          Art United
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
