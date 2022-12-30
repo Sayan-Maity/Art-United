@@ -21,7 +21,7 @@ import {
   Close,
 } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import { setMode, setLogout } from 'state';
+import { setMode, setLogout } from 'state/index';
 import { useNavigate } from 'react-router-dom';
 import FlexBetween from 'components/FlexBetween';
 
@@ -39,10 +39,10 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = `${user.firstName} ${user.lastName}`;
+  const fullName = `${user}`;
 
-  return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+  return <FlexBetween padding="1rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
@@ -179,7 +179,7 @@ const Navbar = () => {
                 }}
                 input={<InputBase />}
               >
-                <MenuItem value={fullName}>
+                  <MenuItem value={fullName}> 
                   <Typography>{fullName}</Typography>
                 </MenuItem>
                 <MenuItem onClick={() => dispatch(setLogout())}>
@@ -191,7 +191,7 @@ const Navbar = () => {
         </Box>
       )}
     </FlexBetween>
-  );
+
 };
 
 export default Navbar;
